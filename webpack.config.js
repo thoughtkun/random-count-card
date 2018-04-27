@@ -2,11 +2,14 @@ var path = require('path')
 var webpack = require('webpack')
 
 module.exports = {
-  entry: ['babel-polyfill', './src/main.js'],
+  entry: ['babel-polyfill', './src/lib/index.js'],
   output: {
     path: path.resolve(__dirname, './dist'),
     publicPath: '/dist/',
-    filename: 'build.js'
+    filename: 'random-count-card.js',
+    library: 'RandomCountCard',
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   module: {
     rules: [
